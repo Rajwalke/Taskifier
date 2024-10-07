@@ -1,0 +1,11 @@
+{
+  "name": "taskapp",
+  "version": "1.0.0",
+  "description": "This is task app.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Raj Walke",
+  "license": "ISC"
+}
