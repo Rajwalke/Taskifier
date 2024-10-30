@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cardcontainer from "./Cardcontainer";
 import { useSelector } from "react-redux";
 import Itemcard from "./Itemcard";
 import About from "./About";
-import CardPopupContainer from "./cardPopupContainer";
+import CardPopupContainer from "./CardPopupContainer";
+import { Search } from "@mui/icons-material";
+import Searchbar from "./Searchbar";
+import Allcards from "./Allcards";
 //mistake agaye tho c capital hai cardPopup ka.abhi nahi horaha rahi
 const Body=()=>{
     const [checkPOp,setcheckPop]=useState(false);
@@ -11,16 +14,27 @@ const Body=()=>{
     const [cardPopupstate,setcardPopupstate]=useState(false);
     const cardinfo=useSelector((store)=>store.carddata.items);
     const [keystate,setkeystate]=useState(0);
+    const [allcardinfo,setallcardinfo]=useState([]);
     // console.log(cardData);
     // console.log(cardPopupstate);
+    const [result,setresult]=useState([]);
 
-    console.log("All Cards info",cardinfo)
-
+    console.log("All Cards info",cardinfo[0].header)
+    // console.log();
+    useEffect(()=>{
+        setresult(cardinfo);
+    },[cardinfo])
     return(
         <div>
+            <div className="flex flex-wrap items-center justify-center">   
+                <Searchbar data={cardinfo} result1={(carddata)=>{setresult(carddata)}}  />
+                <Allcards data={cardinfo} result1={(carddata)=>{setresult(carddata)}} />            
+            {console.log("result is = ",result)}
+
+            </div>
             <div className="flex flex-wrap" >
                 {
-                    cardinfo.map((data,index)=>(
+                    result.map((data,index)=>(
                         <Itemcard key={index} data={data}
                         onClickData={()=>{
                             setcardPopupstate(true);

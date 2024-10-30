@@ -2,7 +2,7 @@
   "name": "taskapp",
   "version": "1.0.0",
   "description": "This is task app.",
-  "main": "app.js",
+  
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
