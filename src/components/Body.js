@@ -19,7 +19,7 @@ const Body=()=>{
     // console.log(cardPopupstate);
     const [result,setresult]=useState([]);
 
-    console.log("All Cards info",cardinfo[0].header)
+    // console.log("All Cards info",cardinfo[0].header)
     // console.log();
     useEffect(()=>{
         setresult(cardinfo);

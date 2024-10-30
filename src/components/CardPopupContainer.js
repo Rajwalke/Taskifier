@@ -11,8 +11,8 @@ const CardPopupContainer = ({ data, close, keyindex }) => {
     const [inprogresstate, setinprogress] = useState(false);
     const [pendingstate, setpending] = useState(true);
 
-    const [headingstate,setheadingstate]=useState(data.header);
-    const [descriptionsatet,setdescriptionstate]=useState(data.descriptioninfo);
+    const [headingstate,setheadingstate]=useState(data?.header);
+    const [descriptionsatet,setdescriptionstate]=useState(data?.descriptioninfo);
     const dispatch = useDispatch();
 
     const deletePop = () => {

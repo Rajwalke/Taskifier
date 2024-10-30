@@ -3,7 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const Cardslice=createSlice({
     name:"carddata",
     initialState:{
-        items:[{header:"hello",descriptioninfo:"today task",
+        items:[{
+            header:"hello",
+            descriptioninfo:"today task",
             inprogress: false,
             done : false,
             Pending:true
