@@ -5,6 +5,8 @@ import Body from "./components/Body";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import About from "./components/About";
+import process from 'process';
+
 import { createBrowserRouter,Outlet,RouterProvider } from "react-router-dom";
  const AppLayout=()=>{
     return(
