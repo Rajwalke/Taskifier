@@ -37,23 +37,23 @@ const Navbar = () => {
         {/* Desktop Menu for tablet and desktop */}
         <div className="hidden md:flex space-x-4">
           <ul className="flex">
-          <li > <Link to="/" className="text-white hover:text-gray-300 mx-3" >Home</Link></li>
-          <li  className="text-white hover:text-gray-300 mx-3">Feedback</li>
-          <li>  <Link to="/About" className="text-white hover:text-gray-300 mx-3" > About</Link></li>
-          <li  className="text-white hover:text-gray-300 mx-3">Contact</li>
+          <li > <Link to="/" className="text-white hover:text-gray-700 mx-3" >Home</Link></li>
+          <li  className="text-white hover:text-gray-700 mx-3">Feedback</li>
+          <li>  <Link to="/About" className="text-white hover:text-gray-700 mx-3" > About</Link></li>
+          <li  className="text-white hover:text-gray-700 mx-3">Contact</li>
           </ul>
         
         </div>
       </div>
 
       {/* Mobile Dropdown Menu - Displays under navbar */}
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-gray-800 space-y-2 mt-2 p-2 text-center mb-3`}>
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-gray-700 space-y-2 mt-2 p-2 text-center mb-3`}>
         <ul className="list-none">
 
-        <li className=""><Link to="/" className="block text-white hover:text-gray-300" >Home</Link></li>
-        <li className="block text-white hover:text-gray-300">Feedback</li>
-        <li><Link to="/About" className="block text-white hover:text-gray-300" > About</Link></li> 
-        <li className="block text-white hover:text-gray-300">Contact</li>
+        <li className=""><Link to="/" className="block text-white hover:text-gray-700" >Home</Link></li>
+        <li className="block text-white hover:text-gray-700">Feedback</li>
+        <li><Link to="/About" className="block text-white hover:text-gray-700" > About</Link></li> 
+        <li className="block text-white hover:text-gray-700">Contact</li>
         
         </ul>
 

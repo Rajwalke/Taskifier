@@ -91,7 +91,36 @@ const CardPopupContainer = ({ data, close, keyindex }) => {
                             </div>
 
                             {/* Buttons */}
-                            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                            <div>
+                                <select 
+                                className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2"
+                                onChange={(e)=>{
+                                    if(e.target.value=="done"){
+                                        dispatch(doneItem(keyindex));
+                                        setdonestatus(true);
+                                        setinprogress(false);
+                                        setpending(false);
+                                    }
+                                    else if(e.target.value=="inprogress"){
+                                        dispatch(inprogessItem(keyindex));
+                                        setinprogress(true);
+                                        setdonestatus(false);
+                                        setpending(false);
+                                    }
+                                    else if(e.target.value=="pending"){
+                                        dispatch(pendingItem(keyindex));
+                                        setpending(true);
+                                        setinprogress(false);
+                                        setdonestatus(false);
+                                    }
+                                    console.log(e.target.value);
+                                }}>
+                                    <option value="done" className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 w-full sm:w-auto" >Done</option>
+                                    <option value="inprogress" className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 w-full sm:w-auto">In Porgress</option>
+                                    <option value="pending" className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 w-full sm:w-auto">Pending</option>
+                                </select>
+                            </div>
+                            {/* <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
                                 <button
                                     className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 w-full sm:w-auto"
                                     onClick={() => {
@@ -125,7 +154,7 @@ const CardPopupContainer = ({ data, close, keyindex }) => {
                                 >
                                     Pending
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Edit, Delete, Cancel Buttons */}
