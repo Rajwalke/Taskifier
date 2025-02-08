@@ -50,6 +50,7 @@ const Body = () => {
       </button>
 
       {/* Popup Modals */}
+      
       <div>
         {checkPOp && <Cardcontainer close={() => setcheckPop(false)} />}
         {cardPopupstate && (
@@ -57,6 +58,7 @@ const Body = () => {
             data={cardData}
             close={() => setcardPopupstate(false)}
             keyindex={keystate}
+
           />
         )}
       </div>
